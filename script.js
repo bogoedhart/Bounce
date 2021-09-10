@@ -13,8 +13,12 @@ function setup() {
  * de code in deze functie wordt meerdere keren per seconde
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
- var x = 640;
- var y = 680;
+ var x = 50;
+ var y = 50;
+
+ var speedX = 10;
+ var speedY = 10;
+
 
 function draw() {
 
@@ -31,16 +35,16 @@ function draw() {
   // teken een cirkel
   ellipse(x, y, 80, 80);
 
-  if (x < 1240){
-    x = x + 5;
-  } else {
-    x = x - 5;
+  x = x + speedX;
+  y = y + speedY;
+
+  if (x === 1240 || x === 40){
+    speedX = speedX * -1;
   }
 
-  if (y < 680){
-    y = y + 5;
-  }  {
-    y = y - 5;
+  if (y === 680 || y === 40){
+    speedY = speedY * -1;
   }
+
 
 }
